@@ -3,9 +3,13 @@ SPDX-FileCopyrightText: 2022 CERN
 SPDX-License-Identifier: CC-BY-4.0
 -->
 
-## example14
+## exampleTileTB
 
-Example demonstrating how to call AdePT from Geant4 using the fast simulation hooks.
+Implementation of the tilecal test beam geometry using AdePT. This is a copy of the example 14, which shows  how to call AdePT 
+from Geant4 using the fast simulation hooks.
+
+At the moment only the default scoring is used, with the goal of implementing a sensitive detector that works both on the host 
+and the device
 
 NOTE: This requires the buffer 'flush' method to be implemented through the FastSimulationManager(s)
 and called in the event loop of the G4EventManager (not part of the Geant4 release yet). Patch provided to be applied on the code.
@@ -18,16 +22,14 @@ To activate AdePT:
 /param/ActivateModel AdePT
 
 and to inactivate it (run full Geant4):
-/example14/adept/activate true 
+/exampleTileTB/adept/activate true 
 /param/InActivateModel AdePT
 
 The selection of the detector region in which AdePT is suppossed to be used, is done through:
-/example14/detector/regionname EcalRegion
+/exampleTileTB/detector/regionname caloregion
 
-The selection of sensitive volumes can be done through:
-/example14/detector/addsensitivevolume EAPD_01
-/example14/detector/addsensitivevolume EAPD_02
-etc.
+The sensitive volume is the scintillator in the tiles: 
+/exampleTileTB/detector/addsensitivevolume Tile::Scintillator
 
 (the selection of sensitive volumes through auxiliary information in the GDML file is not yet supported)
 
