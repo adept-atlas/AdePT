@@ -3739,7 +3739,7 @@
         <volumeref ref="Tile::Plug1Module0x44bf18e0"/>
         <position name="Tile::Plug1Module0x491dd9a0_pos" unit="mm" x="0" y="0" z="225.575"/>
       </physvol>
-      <physvol copynumber="16969" name="Tile::Plug2Module0x491dd180">
+      <physvol copynumber="1001" name="Tile::Plug2Module0x491dd180">
         <volumeref ref="Tile::Plug2Module0x4202b840"/>
         <position name="Tile::Plug2Module0x491dd180_pos" unit="mm" x="107.075" y="0" z="-395"/>
       </physvol>
@@ -3747,7 +3747,7 @@
     <volume name="Tile::ITC0x44305700">
       <materialref ref="Air0x473e0400"/>
       <solidref ref="ITC0x4b979660"/>
-      <physvol copynumber="1" name="Tile::ITCModule0x491dd130">
+      <physvol copynumber="2001" name="Tile::ITCModule0x491dd130">
         <volumeref ref="Tile::ITCModule0x42009a40"/>
         <position name="Tile::ITCModule0x491dd130_pos" unit="mm" x="3605.07728951335" y="177.106090409241" z="0"/>
         <rotation name="Tile::ITCModule0x491dd130_rot" unit="deg" x="90.0000000000001" y="-87.1875" z="89.9999999999999"/>
@@ -3770,7 +3770,7 @@
         <position name="TileFingerNeg0x48ed2170_pos" unit="mm" x="0" y="0" z="-3008.5"/>
         <rotation name="TileFingerNeg0x48ed2170_rot" unit="deg" x="0" y="0" z="8.4375"/>
       </physvol>
-      <physvol copynumber="16969" name="EBarrelPos0x491dead0">
+      <physvol copynumber="101" name="EBarrelPos0x491dead0">
         <volumeref ref="Tile::EBarrel0x449e05a0"/>
         <position name="EBarrelPos0x491dead0_pos" unit="mm" x="0" y="0" z="1524.75"/>
         <rotation name="EBarrelPos0x491dead0_rot" unit="deg" x="0" y="0" z="-2.8125"/>

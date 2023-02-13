@@ -22,7 +22,7 @@
 #include <G4HepEmParameters.hh>
 #include <G4HepEmMatCutData.hh>
 
-#include "SensitiveDetector.hh"
+#include "TileSD.hh"
 #include "EventAction.hh"
 
 AdeptIntegration::~AdeptIntegration()
@@ -183,7 +183,7 @@ void AdeptIntegration::Shower(int event)
 
   // Create energy deposit in the detector
   auto *sd                            = G4SDManager::GetSDMpointer()->FindSensitiveDetector("AdePTDetector");
-  SensitiveDetector *fastSimSensitive = dynamic_cast<SensitiveDetector *>(sd);
+  TileSD *fastSimSensitive = dynamic_cast<TileSD *>(sd);
 
   for (auto id = 0; id != fNumSensitive; id++) {
     // here I add the energy deposition to the pre-existing Geant4 hit based on id

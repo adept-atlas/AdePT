@@ -6,7 +6,7 @@
 #include "PrimaryGeneratorAction.hh"
 #include "DetectorConstruction.hh"
 #include "DetectorMessenger.hh"
-#include "SensitiveDetector.hh"
+#include "TileSD.hh"
 #include "EMShowerModel.hh"
 
 #include "G4NistManager.hh"
@@ -46,6 +46,8 @@
 #include <VecGeom/volumes/PlacedVolume.h>
 #include <VecGeom/volumes/UnplacedBox.h>
 #include <VecGeom/gdml/Frontend.h>
+
+#include "TileBasicID.cuh"
 
 static std::unordered_map<const G4VPhysicalVolume *, int> gScoringMap;
 
@@ -133,9 +135,11 @@ void DetectorConstruction::ConstructSDandField()
   }
 
   // For now the number of sensitive volumes matches the number of placed volumes
-  int numSensitive = vecgeom::GeoManager::Instance().GetPlacedVolumesCount();
+  // int numSensitive = vecgeom::GeoManager::Instance().GetPlacedVolumesCount();
+  // Get as many cells as defined in our helper
+  int numSensitive = TileBasicID_Max();
 
-  SensitiveDetector *caloSD = new SensitiveDetector("AdePTDetector", numSensitive);
+  TileSD *caloSD = new TileSD("AdePTDetector", numSensitive);
   caloSD->fScoringMap       = &gScoringMap;
   G4SDManager::GetSDMpointer()->AddNewDetector(caloSD);
 

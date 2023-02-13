@@ -103,7 +103,7 @@ void EventAction::EndOfEventAction(const G4Event *aEvent)
     hit   = static_cast<SimpleHit *>(hitsCollection->GetHit(iHit));
     hitEn = hit->GetEdep();
     totalEnergy += hitEn;
-
+/*
     G4String vol_name = vecgeom::GeoManager::Instance().FindPlacedVolume(iHit)->GetLogicalVolume()->GetName();
     bool group_found = false;
     for (int igroup = 0; igroup < ngroups; ++igroup) {
@@ -115,18 +115,20 @@ void EventAction::EndOfEventAction(const G4Event *aEvent)
     }
     if (group_found) continue;
     const char *type     = (hit->GetType() == 1) ? "AdePT" : "G4";
-    if (hitEn > 1 && fVerbosity > 1)
+*/ 
+    if ( fVerbosity > 1)
       G4cout << "EndOfEventAction " << eventId << " : id " << std::setw(5) << iHit << "  edep " << std::setprecision(2)
-             << std::setw(12) << std::fixed << hitEn / MeV << " [MeV] logical " << vol_name << G4endl;
+             << std::setw(12) << std::fixed << hitEn / MeV << " [MeV] " << G4endl;
 
   }
 
-  if (fVerbosity > 1) {
+/*   if (fVerbosity > 1) {
     for (int igroup = 0; igroup < ngroups; ++igroup) {
       G4cout << "EndOfEventAction " << eventId << " : group " << std::setw(5) << groups[igroup] << "  edep " << std::setprecision(2)
              << std::setw(12) << std::fixed << edep_groups[igroup] / MeV << " [MeV]\n";
     }
   }
+*/ 
 
   if (fVerbosity > 0) {
     G4cout << "EndOfEventAction " << eventId << "Total energy deposited: " << totalEnergy / MeV << " MeV" << G4endl;

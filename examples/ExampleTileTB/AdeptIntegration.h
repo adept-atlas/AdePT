@@ -21,7 +21,7 @@
 
 // For the moment the scoring type will be determined by what we include here
 #include "CommonStruct.h"
-#include "BasicScoring.h"
+#include "TileScoring.h"
 #include "G4FastSimHitMaker.hh"
 
 class G4Region;

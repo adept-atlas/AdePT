@@ -41,6 +41,7 @@ set(sources_g4
   src/PrimaryGeneratorMessenger.cc
   src/RunAction.cc
   src/SensitiveDetector.cc
+  src/TileSD.cc
   src/PhysListHepEm.cc
   src/TrackingAction.cc
   src/FTFP_BERT_HepEm.cc
@@ -55,7 +56,7 @@ if(HepMC3_FOUND)
 endif()
 
 # exampleTileTB
-add_executable(exampleTileTB exampleTileTB.cpp AdeptIntegration.cpp AdeptIntegration.cu BasicScoring.cu 
+add_executable(exampleTileTB exampleTileTB.cpp AdeptIntegration.cpp AdeptIntegration.cu BasicScoring.cu TileScoring.cu
                ${sources_g4} ${sources_hepmc3})
 
 target_include_directories(exampleTileTB PRIVATE ${PROJECT_SOURCE_DIR}/examples/ExampleTileTB/include 
